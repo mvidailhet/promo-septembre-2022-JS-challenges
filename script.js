@@ -1,20 +1,16 @@
-const dauphinsScore = (105 + 108 + 89) / 3;
-const koalasScore = (88 + 91 + 110) / 3;
+const calcAverage = (score1, score2, score3) => {
+  return (score1 + score2 + score3) / 3;
+};
 
-console.log(`score des Dauphins ${dauphinsScore}`);
-console.log(`score des Koalas ${koalasScore}`);
-
-if (dauphinsScore < 100 && koalasScore < 100) {
-  console.log('pas de gagnant !');
-} else {
-  if (dauphinsScore === koalasScore) {
-    console.log('Egalite !');
-  } else if (dauphinsScore > koalasScore) {
-    console.log('Les Dauphins ont gagné');
-  } else {
-    console.log('Les Koalas ont gagné');
+const checkWinner = (dauphinsScore, koalaScore) => {
+  if (dauphinsScore > koalaScore) {
+    console.log(`L’équipe Dauphins gagne (${dauphinsScore} vs ${koalaScore})`);
+    return;
   }
+  console.log(`L’équipe Koalas gagne (${koalaScore} vs ${dauphinsScore})`);
 }
 
+const dauphinsScore = calcAverage(44, 23, 71);
+const koalaScore = calcAverage(65, 54, 49);
 
-
+checkWinner(dauphinsScore, koalaScore);
